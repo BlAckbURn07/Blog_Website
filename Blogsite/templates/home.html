@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+        {% block title %}
+        	INFLUENCER
+        {% endblock %}
+
+
+{% block content %}
+
+
+
+<h1>Posts</h1>
+<ul>
+{% for x in object_list %}
+	<li><a href="{% url 'articlelink' x.pk %}" style="text-decoration: none;">{{x.title}}</a>-- by {{x.auther.first_name}} {{x.auther.last_name}} <br>
+	{{x.body}}
+	</li>
+{% endfor%}
+</ul>
+
+{% endblock %}
